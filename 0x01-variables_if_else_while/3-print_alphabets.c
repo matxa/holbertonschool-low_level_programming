@@ -8,14 +8,13 @@
  */
 int main(void)
 {
-	for (int x = 'A'; x <= 'z'; x++)
+	char x;
+	for (x = 'a'; x <= 'z'; x++)
 	{
-		x = tolower(x);
 		putchar(x);
 	}
-	for (int x = 'A'; x <= 'Z'; x++)
+	for (x = 'A'; x <= 'Z'; x++)
 	{
-		x = toupper(x);
 		putchar(x);
 	}
 	return (0);

@@ -1,9 +1,8 @@
 #include "holberton.h"
 
-/* betty style doc for function main goes there */
 /**
- * main - Entry point
- *
+ * print_alphabet - prits the alphabet
+ * Alphabet from a-z
  * Return: Always 0 (Success)
  */
 

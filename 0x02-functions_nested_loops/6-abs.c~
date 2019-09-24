@@ -1,0 +1,25 @@
+#include "holberton.h"
+
+/**
+ * _abs - checks if c is lowercase
+ * @n: is a variables
+ * Return: abs
+ *
+ */
+
+int _abs(int r)
+{
+	if (r > 0)
+	{
+		return (r);
+	}
+	else if (r < 0)
+	{
+		return (r);
+	}
+	else
+	{
+		return (r);
+	}
+	return (0);
+}

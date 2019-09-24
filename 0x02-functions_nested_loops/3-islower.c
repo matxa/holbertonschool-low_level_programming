@@ -2,15 +2,14 @@
 
 /**
  * _islower - checks if c is lowercase
- * @c is a variables
- * Return 1 is c is lower case
- * Return: Always 0 (Success)
+ * @c: is a variables
+ * Return: 1 if c is lower case
+ *
  */
 
 int _islower(int c)
 {
-
-	if (_islower(c))
+	if (c >= 'a' && c <= 'z')
 	{
 		return (1);
 	}

@@ -3,19 +3,22 @@
 
 /**
  * print_to_98 - numbers
- *
+ * @n: var contains the value 98
  * Return: numbers from or to 98
  *
  */
 
 void print_to_98(int n)
 {
-	for (n <= 98; n++)
+	if (n < 98)
 	{
-		if (n =! 98)
-		{
+		for (; n < 98; n++)
 			printf("%d, ", n);
-		}
 	}
-	printf("\n");
+	else if (n > 98)
+	{
+		for (; n > 98; n--)
+			printf("%d, ", n);
+	}
+	printf("%d\n", n);
 }

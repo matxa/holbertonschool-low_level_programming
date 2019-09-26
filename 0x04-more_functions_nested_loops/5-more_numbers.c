@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
  * more_numbers - print 0-9
  *
@@ -25,6 +25,6 @@ void more_numbers(void)
 				_putchar(num % 10 + '0');
 			}
 		}
-		_putchar('\n');
+		printf("\n");
 	}
 }

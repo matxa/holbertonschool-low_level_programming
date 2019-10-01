@@ -1,0 +1,27 @@
+#include "holberton.h"
+
+/**
+ *print_rev - shows the pointer of the var
+ *@s: var for p and init
+ *Return: (reverse str)
+ */
+
+void print_rev(char *s)
+{
+	int l = 0;
+	char *begin_ptr, *end_ptr, ch;
+
+	while (*s != '\0')
+	{
+		l++;
+		ch = *end_ptr;
+		*end_ptr = *begin_ptr;
+		*begin_ptr = ch;
+		begin_ptr++;
+		end_ptr--;
+
+		begin_ptr = s;
+		end_ptr = s;
+		s++;
+	}
+}

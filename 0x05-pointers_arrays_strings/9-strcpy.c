@@ -4,7 +4,8 @@
 /**
  **_strcpy - copy
  *@dest: pointer
- *@src: int
+ *@src: pointer
+ *Return: (dest)
  */
 
 char *_strcpy(char *dest, char *src)

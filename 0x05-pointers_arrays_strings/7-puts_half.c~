@@ -1,0 +1,16 @@
+#include "holberton.h"
+
+/**
+ *puts_half - shows the pointer of the var
+ *@str: string pointer
+ *
+ */
+
+void puts_half(char *str)
+{
+	while (*str > (_strlen(char str) / 2))
+	{
+		_putchar(*str);
+	}
+	_putchar('\n');
+}

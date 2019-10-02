@@ -1,0 +1,29 @@
+#include "holberton.h"
+
+/**
+ *rev_string - shows the pointer of the var
+ *@s: var for string pointer
+ *Return: (rev string)
+ */
+
+void rev_string(char *s)
+{
+	char rev[1000];
+	int a, b;
+	a = 0;
+
+	while (*(s + a) != '\0')
+	{
+		rev[a] = *(s + a);
+		a++;
+	}
+	b = a - 1;
+	a = 0;
+
+	while (b >= 0)
+	{
+		*(s + b) = rev[a];
+		b--;
+		a++;
+	}
+}

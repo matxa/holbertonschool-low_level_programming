@@ -1,0 +1,26 @@
+#include "holberton.h"
+
+/**
+ **_strcat - cat
+ *@dest: pointer
+ *@src: pointer
+ *Return: (dest)
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int i;
+	char *cat = dest;
+
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		*dest++ = *src++;
+	}
+	dest[i] = '\0';
+
+	return (cat);
+}

@@ -9,18 +9,32 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int i;
-	char *cat = dest;
+	int srci = 0;
+	int dest_len = _strlen(dest);
 
-	while (*dest != '\0')
+	while(src[srci] != '\0')
 	{
-		dest++;
+		dest[dest_len + srci] = src[srci];
+		srci++;
 	}
-	for (i = 0; src[i] != '\0'; i++)
-	{
-		*dest++ = *src++;
-	}
-	dest[i] = '\0';
+		dest[dest_len + srci] = '\0';
+		return (dest);
+}
 
-	return (cat);
+/**
+ *_strlen - shows the pointer of the var
+ *@s: var for p and init
+ *Return: (length)
+ */
+
+int _strlen(char *s)
+{
+	int length = 0;
+
+	while (*s != '\0')
+	{
+		length++;
+		s++;
+	}
+	return (length);
 }

@@ -1,14 +1,19 @@
 #include "holberton.h"
 
 /**
- **_memset - function that fills memory with a constant byte
- *@s: pointer
- *@b: char var
+ **_memcpy - function that fills memory with a constant byte
+ *@dest: pointer
+ *@src: char var
  *@n: int var
  *Return: (b)
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	
+	char *temp_p = dest;
+	const char *s = src;
+
+	while (n--)
+		*p++ = *s++;
+	return (dest);
 }

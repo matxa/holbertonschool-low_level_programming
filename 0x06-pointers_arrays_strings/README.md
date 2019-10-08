@@ -1,6 +1,6 @@
 C - More pointers, arrays and strings
 
-** Question 6 - The leet Function **
+**Question 6 - The leet Function**
 
  - Prototype *leet(char *s);
 

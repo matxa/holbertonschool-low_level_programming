@@ -27,9 +27,9 @@ the incrementor(i) is updated everytime the loop runs, and by doing so it captur
 
     i++;
 
-The second while loop which, which is nested inside the first while loop. Iterates through the letters[]
+The second while loop which, which is nested inside the first while loop. Iterates through the letters[] until index not equal to the null byte.
 
-    while (letters[i_sec_loop])
+    while (letters[i_sec_loop] != '\0')
 
 the incrementor(i_sec_loop) is updated everytime the loop runs, and by doing so it captures the length of letters[]
 

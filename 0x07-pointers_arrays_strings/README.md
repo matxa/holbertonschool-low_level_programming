@@ -15,6 +15,7 @@ To declare a pointer we need to use the syntax ```datatype **pointer_to_pointer 
    int *pointer_to_var = &var;
    int **points_to_the_pointer_of_var = &pointer_to_var;
 ```
+
 The ```**pointer_to_the_pointer_of_var``` contains the address of the ```*pointer_to_var```, which points to the location that contains the actual value(value of var).
 
  - __Multi-dimensional Arrays in C__

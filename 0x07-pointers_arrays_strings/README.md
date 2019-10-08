@@ -8,7 +8,7 @@ When we define a pointer to a pointer, the first pointer contains the address of
 
 - Declaration
 
-To declare a pointer we need to use the syntax ```datatype **pointer_to_pointer = &pointer;```
+To declare a pointer we need to use the syntax ```( datatype **pointer_to_pointer = &pointer; )```
 
 ```
    int var = 21;

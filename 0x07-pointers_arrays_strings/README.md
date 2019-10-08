@@ -22,4 +22,16 @@ An array of arrays is known as 2D array.
 
 - Declaration
 
-data
+Syntax:
+
+```datatype arrayName[size1][size2];```
+
+```int arr[2][4] = {
+    {10, 11, 12, 13},
+    {14, 15, 16, 17}
+};
+```
+
+The first size is for the number of rows.
+
+The second size is for the number of colums.

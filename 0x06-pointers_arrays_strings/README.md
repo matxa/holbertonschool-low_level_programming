@@ -35,7 +35,7 @@ the incrementor(i_sec_loop) is updated everytime the loop runs, and by doing so 
 
     i_sec_loop++;
 
-The if statement is just checking if the value of the index of given string (s) matches the value of the index of letters[]; if so then change the value of that index with a new char,that char is found in the numbers[]
+The if statement is just checking if the value of the index of given string (s) matches the value of the index of letters[]; if so then change the value of that index with a new char, that char is found in the numbers[]
 
  - Return
 

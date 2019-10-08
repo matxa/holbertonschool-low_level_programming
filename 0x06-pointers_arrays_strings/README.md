@@ -10,21 +10,31 @@ String transformation or translation. The way I look at this is the same as sayi
  - Declarations
 
 From the get go I made two "arrays or strings", char letter[] = "aAeEoOtTlL"; which stores the letter characters that we are looking for in the string given to us "passed as an argument to the leet fucntion".
+
 char numbers[] = "4433007711"; which stores the number characters value, that we are going to change the given string to once a match is found between the given string (s) and the letters[] string array.
 
-- int i; - incrementor for the first while loop\n
-- int i_sec_loop; - incrementor for the secound while loop\n
+     int i; - incrementor for the first while loop
+
+     int i_sec_loop; - incrementor for the secound while loop
 
  - Loops and statements
 
 The first while, iterates until the index of the given string not equal (!=) to the null byte.
--    while (s[i] != '\0')
+
+    while (s[i] != '\0')
+
 the incrementor(i) is updated everytime the loop runs, and by doing so it captures the length of the given string (s).
--    i++;
+
+    i++;
+
 The second while loop which, which is nested inside the first while loop. Iterates through the letters[]
--    while (letters[i_sec_loop])
+
+    while (letters[i_sec_loop])
+
 the incrementor(i_sec_loop) is updated everytime the loop runs, and by doing so it captures the length of letters[]
--    i_sec_loop++;
+
+    i_sec_loop++;
+
 The if statement is just checking if the value of the index of given string (s) matches the value of the index of letters[]; if so then change the value of that index with a new char,that char is found in the numbers[]
 
  - Return

@@ -16,8 +16,13 @@ char *leet(char *s)
 
 	while (s[i] != '\0')
 	{
-		if (s[i] == *letters)
-			s[i] = *numbers;
+		int i_sec_loop = 0;
+		while (letters[i_sec_loop] != '\0')
+		{
+			if (s[i] == letters[i_sec_loop])
+				s[i] = numbers[i_sec_loop];
+			i_sec_loop++;
+		}
 		i++;
 	}
 	return (s);

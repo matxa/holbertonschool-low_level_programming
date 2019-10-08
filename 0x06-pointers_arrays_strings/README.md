@@ -4,7 +4,7 @@ C - More pointers, arrays and strings
 
  - Prototype *leet(char *s);
 
-The leet function I've created takes a string argument represented with the parameter (char *s). The string passed to the function is then transformed into a new string.\n
+The leet function I've created takes a string argument represented with the parameter (char *s). The string passed to the function is then transformed into a new string.
 String transformation or translation. The way I look at this is the same as saying. I am swapping values between arrays. 
 
  - Declarations

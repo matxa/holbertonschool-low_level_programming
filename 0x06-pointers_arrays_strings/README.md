@@ -45,8 +45,8 @@ The leet function returns the translated string where char a and A is now 4, cha
 
 Input:
 
-char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
+	char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
 
 Output:
 
-3xp3c7 7h3 b3s7. Pr3p4r3 f0r 7h3 w0rs7. C4pi741iz3 0n wh47 c0m3s.
+	3xp3c7 7h3 b3s7. Pr3p4r3 f0r 7h3 w0rs7. C4pi741iz3 0n wh47 c0m3s.

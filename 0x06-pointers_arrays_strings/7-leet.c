@@ -17,6 +17,7 @@ char *leet(char *s)
 	while (s[i] != '\0')
 	{
 		int i_sec_loop = 0;
+
 		while (letters[i_sec_loop] != '\0')
 		{
 			if (s[i] == letters[i_sec_loop])

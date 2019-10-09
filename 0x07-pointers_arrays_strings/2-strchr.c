@@ -1,11 +1,10 @@
 #include "holberton.h"
 
 /**
- **_memset - function that fills memory with a constant byte
+ **_strchr - finds and return char
  *@s: pointer
- *@b: char var
- *@n: int var
- *Return: (b)
+ *@c: int var
+ *Return: (s)
  */
 
 char *_strchr(char *s, char c)

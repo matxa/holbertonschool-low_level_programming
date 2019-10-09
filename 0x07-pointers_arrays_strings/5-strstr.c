@@ -14,7 +14,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (*haystack == *needle)
 		{
-			if (!_strcmp(haystack, needle))
+			if (_strcmp(haystack, needle) == 0)
 				return ((char *)haystack);
 		}
 		haystack++;
@@ -42,4 +42,24 @@ int _strcmp(char *s1, char *s2)
 			equal = *(s1 + i) - *(s2 + i);
 	}
 	return (equal);
+}
+
+#include "holberton.h"
+
+/**
+ *_strlen - shows the pointer of the var
+ *@s: var for p and init
+ *Return: (length)
+ */
+
+int _strlen(char *s)
+{
+	int length = 0;
+
+	while (*s != '\0')
+	{
+		length++;
+		s++;
+	}
+	return (length);
 }

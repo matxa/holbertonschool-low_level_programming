@@ -13,5 +13,6 @@ void set_string(char **s, char *to);
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 int _strncmp(const char *s1, const char *s2, int n);
+int _putchar(char c);
 
 #endif

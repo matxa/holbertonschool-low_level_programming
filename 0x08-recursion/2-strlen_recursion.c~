@@ -1,0 +1,17 @@
+#include "holberton.h"
+
+/**
+ *_puts - shows the pointer of the var
+ *@str: string pointer
+ *
+ */
+
+int _strlen_recursion(char *s)
+{
+	if (*s != '\0')
+	{
+		s++;
+		return (1 + _strlen_recursion(s));
+	}
+	return (0);
+}

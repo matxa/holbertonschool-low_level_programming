@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <string.h>
 
 /**
  **_strstr - finds and return char
@@ -14,7 +13,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (*haystack == *needle)
 		{
-			if (_strcmp(haystack, needle) == 0)
+			if (_strncmp(haystack, needle) == 0)
 				return ((char *)haystack);
 		}
 		haystack++;
@@ -22,29 +21,30 @@ char *_strstr(char *haystack, char *needle)
 	return (0);
 }
 
-#include "holberton.h"
 
 /**
- *_strcmp - shows the pointer of the var
+ *_strncmp - shows the pointer of the var
  *@s2: var for p
  *@s1: p
+ *@n: len
  *Return: equal
  */
 
-int _strcmp(char *s1, char *s2)
+int _strncmp(const char *s1, const char *s2, int n)
 {
-	int i = 0;
-	int equal = 0;
+	char u1, u2;
 
-	for (i = 0; (*(s1 + i) || *(s2 + i)) && !equal; i++)
+	while (n-- > 0)
 	{
-		if (*(s1 + i) != *(s2 + i))
-			equal = *(s1 + i) - *(s2 + i);
+		u1 = (char) *s1++;
+		u2 = (char) *s2++;
+		if (u1 != u2)
+			return u1 - u2;
+		if (u1 == '\0')
+			return 0;
 	}
-	return (equal);
+	return 0;
 }
-
-#include "holberton.h"
 
 /**
  *_strlen - shows the pointer of the var

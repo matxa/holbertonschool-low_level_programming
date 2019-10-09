@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <string.h>
 
 /**
  **_strpbrk - function that fills memory with a constant byte
@@ -11,6 +12,8 @@ char *_strpbrk(char *s, char *accept)
 {
 	const char *c = accept;
 
+	if (!*s)
+		return (NULL);
 	while (*s)
 	{
 		for (c = accept; *c; c++)
@@ -22,5 +25,8 @@ char *_strpbrk(char *s, char *accept)
 			break;
 		s++;
 	}
+	if (*c == '\0')
+		s = NULL;
+
 	return ((char *) s);
 }

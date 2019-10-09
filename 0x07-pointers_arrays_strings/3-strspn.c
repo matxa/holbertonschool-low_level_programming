@@ -1,0 +1,23 @@
+#include "holberton.h"
+
+/**
+ * _strspn - function that fills memory with a constant byte
+ * @s: pointer
+ * @accept: char var
+ * Return: ()
+ */
+
+unsigned int _strspn(char *s, char *accept)
+{
+	int i, j;
+
+	for (i = 0; s[i]; i++)
+	{
+		for (j = 0; accept[j]; j++)
+			if (s[i] == accept[i])
+				break;
+		if (!s[j])
+			break;
+	}
+	return (i);
+}

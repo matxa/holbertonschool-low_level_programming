@@ -10,7 +10,7 @@ int _sqrt_recursion(int n)
 {
 	if (n == 0)
 		return (0);
-	return ( _isroot(1, n));
+	return (_isroot(1, n));
 }
 
 /**
@@ -26,5 +26,5 @@ int _isroot(int i, int n)
 		return (i);
 	if (i * i > n)
 		return (-1);
-	return ( _isroot(i + 1, n));
+	return (_isroot(i + 1, n));
 }

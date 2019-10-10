@@ -8,19 +8,23 @@
 
 int is_prime_number(int n)
 {
-	int i = 2;
-
-	if (n <= 2)
-	{
-		return ((n == 2) ? 1 : 0);
-	}
-	if (n % i == 0)
-	{
+	if (n <= 1)
 		return (0);
-	}
-	if (i * i > n)
-	{
+	return (check_if_its_prime(2, n));
+}
+
+/**
+ *check_if_its_prime - shows the pointer of the var
+ *@i: var int
+ *@n: var int
+ *Return: (length)
+ */
+
+int check_if_its_prime(int i, int n)
+{
+	if (i == n)
 		return (1);
-	}
-	return (is_prime_number(n));
+	if (n % i == 0)
+		return (0);
+	return (check_if_its_prime(i + 1, n));
 }

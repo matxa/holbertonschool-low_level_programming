@@ -9,13 +9,16 @@
  *
  */
 
-int main(int argc __attribute__((unused)), char *argv[])
+int main(int argc, char** argv)
 {
 	int a = atoi(argv[1]);
 	int b = atoi(argv[2]);
-	int multi;
 
-	multi = a * b;
-	printf("%d\n", multi);
+	if (argc < 3)
+	{
+		printf("Error");
+		return (1);
+	}
+	printf("%d\n", (a * b));
 	return (0);
 }

@@ -12,7 +12,6 @@
 
 int main(int argc, char **argv)
 {
-	char digit[] = "0123456789";
 	int sum;
 	int i;
 
@@ -22,12 +21,11 @@ int main(int argc, char **argv)
 		{
 			printf("0\n");
 		}
-		if (isdigit(argv[i]) != digit[i])
+		else
 		{
-			printf("Error");
-			return (1);
+			sum += atoi(argv[i]);
 		}
-		sum += atoi(argv[i]);
 	}
+	printf("%d\n", sum);
 	return (0);
 }

@@ -19,6 +19,10 @@ char *str_concat(char *s1, char *s2)
 		s2[0] = '\0';
 	}
 
+	if (concat == NULL)
+	{
+		return (NULL);
+	}
 	strcpy(concat, s1);
 	strcat(concat, s2);
 	return (concat);

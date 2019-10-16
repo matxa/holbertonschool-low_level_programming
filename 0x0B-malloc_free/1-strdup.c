@@ -11,8 +11,8 @@
 
 char *_strdup(char *str)
 {
-	int len = _strlen(str) + 1;
-	char *dupli = malloc(len);
+	int len = _strlen(str);
+	char *dupli = malloc(sizeof(str) * len);
 
 	if (dupli == NULL)
 	{

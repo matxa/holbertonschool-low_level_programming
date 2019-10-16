@@ -21,13 +21,13 @@ char *create_array(unsigned int size, char c)
 	}
 	hold_c = malloc(sizeof(unsigned int) * size);
 
-	if (hold_c == NULL)
-	{
-		return (NULL);
-	}
 	for (i = 0; i < size; i++)
 	{
 		hold_c[i] = c;
 	}
+        if (hold_c == NULL)
+        {
+                return (NULL);
+        }
 	return (hold_c);
 }

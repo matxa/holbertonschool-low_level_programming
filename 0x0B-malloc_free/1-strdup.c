@@ -19,7 +19,6 @@ char *_strdup(char *str)
 		return (NULL);
 		free(dupli);
 	}
-	else
 	return ((char *) _memcpy(dupli, str, len));
 }
 

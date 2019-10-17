@@ -12,5 +12,21 @@
 
 int **alloc_grid(int width, int height)
 {
+	int **dynamic_arr;
+	int num_rows = width;
+	int num_cols = height;
+	int i;
 
+	if (width <= 0 || height <= 0)
+	{
+		return (NULL);
+	}
+
+	dynamic_arr = malloc(sizeof(int) * num_rows + 1);
+
+	for (i = 0; i < num_rows; i++)
+	{
+		dynamic_arr[i] = malloc(sizeof(int) * num_cols);
+	}
+	return (dynamic_arr);
 }

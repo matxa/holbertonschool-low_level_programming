@@ -10,5 +10,7 @@ void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
 int _strlen(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n);
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
 
 #endif

@@ -1,7 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+
 /**
  * *str_concat - concatinate
  * @s1: 1st string
@@ -23,7 +22,64 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	strcpy(concat, s1);
-	strcat(concat, s2);
+	_strcpy(concat, s1);
+	_strcat(concat, s2);
 	return (concat);
+}
+
+/**
+ **_strcpy - copy
+ *@dest: pointer
+ *@src: pointer
+ *Return: (dest)
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+		dest[i] = src[i];
+	dest[i] = '\0';
+
+	return (dest);
+}
+
+/**
+ **_strcat - cat
+ *@dest: pointer
+ *@src: pointer
+ *Return: (dest)
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int srci = 0;
+	int dest_len = _strlen(dest);
+
+	while (src[srci] != '\0')
+	{
+		dest[dest_len + srci] = src[srci];
+		srci++;
+	}
+	dest[dest_len + srci] = '\0';
+	return (dest);
+}
+
+/**
+ *_strlen - shows the pointer of the var
+ *@s: var for p and init
+ *Return: (length)
+ */
+
+int _strlen(char *s)
+{
+	int length = 0;
+
+	while (*s != '\0')
+	{
+		length++;
+		s++;
+	}
+	return (length);
 }

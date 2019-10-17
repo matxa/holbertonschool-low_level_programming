@@ -1,0 +1,49 @@
+#include "holberton.h"
+#include <stdlib.h>
+
+/**
+ * string_nconcat - concat str
+ * @s1: 1st string
+ * @s2: 2nd string
+ * @n: n
+ * Return: n
+ */
+
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+	unsigned char c1 = '\0';
+	unsigned char c2 = '\0';
+	if (n >= 4)
+	{
+		size_t n4 = n >> 2;
+      do
+      {
+	      c1 = (unsigned char) *s1++;
+	      c2 = (unsigned char) *s2++;
+	      if (c1 == '\0' || c1 != c2)
+		      return c1 - c2;
+	      c1 = (unsigned char) *s1++;
+	      c2 = (unsigned char) *s2++;
+	      if (c1 == '\0' || c1 != c2)
+		      return c1 - c2;
+	      c1 = (unsigned char) *s1++;
+	      c2 = (unsigned char) *s2++;
+	      if (c1 == '\0' || c1 != c2)
+		      return c1 - c2;
+	      c1 = (unsigned char) *s1++;
+	      c2 = (unsigned char) *s2++;
+	      if (c1 == '\0' || c1 != c2)
+		      return c1 - c2;
+      } while (--n4 > 0);
+      n &= 3;
+	}
+	while (n > 0)
+	{
+		c1 = (unsigned char) *s1++;
+		c2 = (unsigned char) *s2++;
+		if (c1 == '\0' || c1 != c2)
+			return c1 - c2;
+		n--;
+	}
+	return c1 - c2;
+}

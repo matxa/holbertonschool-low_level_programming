@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
  * malloc_checked - checks
  * @b: int
@@ -10,10 +10,13 @@
 
 void *malloc_checked(unsigned int b)
 {
-	int *a = malloc(sizeof(int) * b);
-	if (b == 0)
+	int temp = b;
+
+	unsigned int *a = malloc(sizeof(unsigned int) * temp);
+	if (a == NULL)
 	{
 		exit(98);
 	}
+	free(a);
 	return (a);
 }

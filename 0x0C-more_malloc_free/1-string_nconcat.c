@@ -32,10 +32,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (!temp)
 		return (NULL);
 
-	for (a = 0; s1[a] < len1; a++)
+	for (a = 0; a < len1; a++)
 		temp[a] = s1[a];
-	for (b = 0; s2[b] < len2; b++)
-                temp[a + b] = s1[a];
+	for (b = 0; b < len2; a++, b++)
+		temp[a] = s2[b];
 	temp[len1 + n] = '\0';
 	return (temp + '\0');
 }

@@ -2,56 +2,24 @@
 #include <stdlib.h>
 
 /**
- * *_strdup - duplicate str
- * @str: char array
- * Return: duplicated str
+ * _strdup - duplicate str
+ * @str: string
+ * Return: new_str
  *
  */
 
 char *_strdup(char *str)
 {
-	int len = _strlen(str);
-	char *dupli = malloc(sizeof(str) * len);
+	char *new_str;
+	int i, n;
 
-	if (dupli == NULL)
-	{
+	for (n = 0; str[n] != '\0'; n++)
+	{}
+	new_str = malloc(n + 1);
+	if (str == NULL)
 		return (NULL);
-	}
-	return ((char *) _memcpy(dupli, str, len));
-}
-
-/**
- **_memcpy - function that fills memory with a constant byte
- *@dest: pointer
- *@src: char var
- *@n: int var
- *Return: (b)
- */
-
-char *_memcpy(char *dest, char *src, unsigned int n)
-{
-	char *temp_p = dest;
-	const char *s = src;
-
-	while (n--)
-		*temp_p++ = *s++;
-	return (dest);
-}
-
-/**
- *_strlen - shows the pointer of the var
- *@s: var for p and init
- *Return: (length)
- */
-
-int _strlen(char *s)
-{
-	int length = 0;
-
-	while (*s != '\0')
-	{
-		length++;
-		s++;
-	}
-	return (length);
+	for (i = 0; i < (n + 1); i++)
+		new_str[i] = str[i];
+	new_str[i] = '\0';
+	return (new_str);
 }

@@ -1,6 +1,6 @@
 #ifndef ABSOLUTE_VALUE
 #define ABSOLUTE_VALUE
 
-#define ABS(i) ((i < 0) ? (-i) : (i))
+#define ABS(x) ((x < 0) ? (-x) : (x))
 
 #endif

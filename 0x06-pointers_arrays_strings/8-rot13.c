@@ -16,11 +16,10 @@ char *rot13(char *s)
 		{
 			s[i] = (s[i] + 13);
 		}
-		else
-			while ((s[i] >= 'n' && s[i] <= 'z') || (s[i] >= 'N' && (s[i] + 13) <= 'Z'))
-			{
-				s[i] = (s[i] - 13);
-			}
+		else if ((s[i] >= 'n' && s[i] <= 'z') || (s[i] >= 'N' && (s[i] + 13) <= 'Z'))
+		{
+			s[i] = (s[i] - 13);
+		}
 		i++;
 	}
 	return (s);

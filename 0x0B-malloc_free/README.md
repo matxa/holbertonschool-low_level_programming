@@ -1,8 +1,8 @@
-#General
+# General
 
-- ##What is the difference between automatic and dynamic allocation
+- ## What is the difference between automatic and dynamic allocation
 
-  ###Dynamic memory allocation
+  ### Dynamic memory allocation
 
   Is memory allocated at runtime using `calloc()`, `malloc()` and friends. It is sometimes also referred to as ‘heap’ memory, although it has nothing to do with the heap data-structure [ref](http://www.quora.com/Why-is-dynamic-memory-allocation-called-heap-memory-allocation).
 
@@ -12,7 +12,7 @@
 
   Heap memory is persistent until `free()` is called. In other words, you control the lifetime of the variable.
 
-  ###Automatic memory allocation
+  ### Automatic memory allocation
 
   This is what is commonly known as ‘stack’ memory, and is allocated when you enter a new scope (usually when a new function is pushed on the call stack). Once you move out of the scope, the values of automatic memory addresses are undefined, and it is an [error to access them](http://stackoverflow.com/a/6445794/140264).
 
@@ -24,9 +24,9 @@
 
 
 
-- ##What is `malloc` and `free` and how to use them
+- ## What is `malloc` and `free` and how to use them
 
-  ##malloc()
+  ## malloc()
 
   **“memory allocation”** method is used to dynamically allocate a single large block of memory with the specified size. **It returns a pointer of type void which can be cast into a pointer of any form***.
 
@@ -62,7 +62,7 @@
 
 
 
-  #Syntax:
+  # Syntax:
 
   Pay attention line 3 and 8.
 
@@ -82,7 +82,7 @@
   of the first byte in the allocated memory.
   ```
 
-  ![Malloc-function-in-c](/Users/marcelomartins/Desktop/Malloc-function-in-c.png)
+  ![Example](/Users/marcelomartins/Desktop/Malloc-function-in-c.png)
 
   ## Example:
 
@@ -132,7 +132,7 @@
   }
   ```
 
-  ###OUTPUT:
+  ### OUTPUT:
 
   ```c
   Enter number of elements: 5
@@ -140,7 +140,7 @@
   The elements of the array are: 1, 2, 3, 4, 5,
   ```
 
-  #free()
+  # free()
 
   **“free”** method is used to dynamically **de-allocate** the memory. The memory allocated using functions malloc() and calloc() are not de-allocated on their own. Hence the free() method is used, whenever the dynamic memory allocation takes place. It helps to reduce wastage of memory by freeing it.
 
@@ -212,9 +212,9 @@
   Calloc Memory successfully freed.
   ```
 
-- ##Why and when use `malloc`
+- ## Why and when use `malloc`
 
-- ##How to use `valgrind` to check for memory leak
+- ## How to use `valgrind` to check for memory leak
 
   Make sure Valgrind is installed.
 

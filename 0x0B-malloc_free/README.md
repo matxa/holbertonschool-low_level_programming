@@ -82,7 +82,7 @@
   of the first byte in the allocated memory.
   ```
 
-  ![malloc-function-in-c](https://imgur.com/GniVHRm)
+  ![malloc-function-in-c](https://imgur.com/GniVHRm.png)
 
   ## Example:
 

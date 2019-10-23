@@ -36,26 +36,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 		ptr->name[i1] = name[i1];
 	for (i2 = 0; owner[i2] != '\0'; i2++)
 		ptr->owner[i2] = owner[i2];
-	free_dog(ptr);
 	ptr->age = age;
 	return (ptr);
 }
 
-/**
- * free_dog - who let the dogs out
- * @d: var
- *
- */
-
-void free_dog(dog_t *d)
-{
-	if (d)
-	{
-		free(d->name);
-		free(d->owner);
-		free(d);
-	}
-}
 
 /**
  *_strlen - shows the pointer of the var

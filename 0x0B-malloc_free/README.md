@@ -148,7 +148,7 @@
   free(ptr);
   ```
 
-  ![Free-function-in-c](/Users/marcelomartins/Desktop/Free-function-in-c.png)
+  ![Free-function-in-c](https://imgur.com/QwJo0Iw)
 
   ## Example:
 

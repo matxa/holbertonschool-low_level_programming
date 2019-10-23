@@ -148,7 +148,7 @@
   free(ptr);
   ```
 
-  ![Free-function-in-c](https://imgur.com/QwJo0Iw)
+  ![free-malloc](https://i.imgur.com/QwJo0Iw.png)
 
   ## Example:
 

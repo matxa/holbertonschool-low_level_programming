@@ -27,9 +27,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	/* char array owner */
+	owner = malloc(sizeof(*owner) * (strlen(owner) + 1));
 	if (ptr->owner == NULL)
 	{
-		free(ptr);
+		free(ptr->name);
 		return (NULL);
 	}
 	/* loop throught name array and owner array */

@@ -41,3 +41,28 @@ int op_mul(int a, int b)
 	return (a * b);
 }
 
+/**
+ * op_div - Division function
+ * @a: num
+ * @b: num
+ * Return: Division
+ *
+ */
+
+int op_div(int a, int b)
+{
+	return (a / b);
+}
+
+/**
+ * op_mod - modulo function
+ * @a: num
+ * @b: num
+ * Return: remainder
+ *
+ */
+
+int op_mod(int a, int b)
+{
+	return (a % b);
+}

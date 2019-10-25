@@ -15,14 +15,14 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf(Error1\n);
+		printf("Error\n");
 		exit(98);
 	}
 	new = get_op_func(argv[2]);
 
 	if (new == NULL)
 	{
-		printf("Error2\n");
+		printf("Error\n");
 		exit(99);
 	}
 
@@ -32,6 +32,6 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	printf("%d", new(num1, num2));
+	printf("%d\n", new(num1, num2));
 	return (0);
 }

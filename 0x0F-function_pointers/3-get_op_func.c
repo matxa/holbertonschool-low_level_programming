@@ -21,13 +21,12 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i;
 
-	if (s)
+	i = 0;
+	while (ops[i].op != NULL)
 	{
-		i = 0;
-		while (s[i] != NULL)
-		{
-			get_op_func(s[i])
-		}
+		if (ops[i].op == *s && !(*(s + 1)))
+			return (ops[i].f);
+		i++;
 	}
 	return (NULL);
 }

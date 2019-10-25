@@ -1,14 +1,37 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "3-calc.h"
 
 /**
  * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * @argc: num of args
+ * @argv: args
+ * Return: result of num1 and num2.
  */
 
-int main(void)
+int main(int argc, char *argv[])
 {
-	
+	int (*new)(int, int);
+	int num1 = atoi(argv[1]);
+	int num2 = atoi(argv[3]);
+
+	if (argc != 4)
+	{
+		printf(Error1\n);
+		exit(98);
+	}
+	new = get_op_func(argv[2]);
+
+	if (new == NULL)
+	{
+		printf("Error2\n");
+		exit(99);
+	}
+
+	if ((atoi(argv[3]) == 0) && (*argv[2] == '/' || argv[2][0] == '%'))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	printf("%d", new(num1, num2));
+	return (0);
 }

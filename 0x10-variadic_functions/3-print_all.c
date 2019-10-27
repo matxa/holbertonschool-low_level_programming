@@ -3,7 +3,7 @@
 
 /**
  * print_all - print all
- * @format
+ * @format: strings
  *
  *
  */
@@ -43,12 +43,11 @@ void print_all(const char * const format, ...)
 			break;
 		default:
 			flag = 0;
-			i++;
 			continue;
 		}
 		flag = 1;
 		i++;
 	}
-	printf("\n");
 	va_end(pa);
+	printf("\n");
 }

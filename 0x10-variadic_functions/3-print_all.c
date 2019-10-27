@@ -43,6 +43,7 @@ void print_all(const char * const format, ...)
 			break;
 		default:
 			flag = 0;
+			i++;
 			continue;
 		}
 		flag = 1;

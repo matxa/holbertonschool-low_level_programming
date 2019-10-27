@@ -4,25 +4,22 @@
 /**
  * print_all - print all
  * @format: strings
- *
- *
  */
 
 void print_all(const char * const format, ...)
 {
 	unsigned int i, flag;
 	char *str;
-
 	va_list pa;
 
 	va_start(pa, format);
-
 	flag = 0;
 	i = 0;
 	while (format[i] != '\0')
 	{
 		if (flag)
 			printf(", ");
+
 		switch (format[i])
 		{
 		case 'c':

@@ -1,6 +1,5 @@
 #include "variadic_functions.h"
 
-
 /**
  * print_all - print all
  * @format: strings
@@ -12,9 +11,9 @@ void print_all(const char * const format, ...)
 	char *str;
 	va_list pa;
 
-	va_start(pa, format);
 	flag = 0;
-	i = 0;
+        i = 0;
+	va_start(pa, format);
 	while (format[i] != '\0')
 	{
 		if (flag)

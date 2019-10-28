@@ -14,7 +14,7 @@ void print_all(const char * const format, ...)
 	flag = 0;
 	i = 0;
 	va_start(pa, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format)
 	{
 		if (flag)
 			printf(", ");
@@ -33,8 +33,10 @@ void print_all(const char * const format, ...)
 		case 's':
 			str = va_arg(pa, char*);
 			if (str)
+			{
 				printf("%s", str);
-			break;
+				break;
+			}
 			printf("(nil)");
 			break;
 		default:

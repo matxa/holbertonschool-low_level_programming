@@ -7,18 +7,16 @@
 
 void print_all(const char * const format, ...)
 {
-	unsigned int i, flag;
+	unsigned int i = 0;
+	unsigned int flag = 0;
 	char *str;
 	va_list pa;
 
-	flag = 0;
-	i = 0;
 	va_start(pa, format);
 	while (format[i] != '\0' && format)
 	{
 		if (flag)
 			printf(", ");
-
 		switch (format[i])
 		{
 		case 'c':

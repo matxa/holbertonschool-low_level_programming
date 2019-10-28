@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 	va_list pa;
 
 	flag = 0;
-        i = 0;
+	i = 0;
 	va_start(pa, format);
 	while (format[i] != '\0')
 	{

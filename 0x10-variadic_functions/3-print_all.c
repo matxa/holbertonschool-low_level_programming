@@ -15,8 +15,7 @@ void print_all(const char * const format, ...)
 	va_start(pa, format);
 	while (format[i] != '\0' && format)
 	{
-		if (flag)
-			printf(", ");
+		flag = 1;
 		switch (format[i])
 		{
 		case 'c':
@@ -42,7 +41,8 @@ void print_all(const char * const format, ...)
 			i++;
 			continue;
 		}
-		flag = 1;
+		if (flag && format[i + 1] != '\0')
+			printf(", ");
 		i++;
 	}
 	va_end(pa);

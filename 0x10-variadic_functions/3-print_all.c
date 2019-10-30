@@ -13,7 +13,7 @@ void print_all(const char * const format, ...)
 	va_list pa;
 
 	va_start(pa, format);
-	while (format[i] && format)
+	while (format && format[i])
 	{
 		if (flag)
 			printf(", ");
@@ -29,9 +29,9 @@ void print_all(const char * const format, ...)
 			printf("%f", va_arg(pa, double));
 			break;
 		case 's':
+			str = va_arg(pa, char*);
 			if (str)
 			{
-				str = va_arg(pa, char*);
 				printf("%s", str);
 				break;
 			}

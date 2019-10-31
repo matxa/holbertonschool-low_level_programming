@@ -26,6 +26,5 @@ size_t print_list(const list_t *h)
 		num_of_elem++;
 		printf("\n");
 	}
-	printf("\n");
 	return (num_of_elem);
 }

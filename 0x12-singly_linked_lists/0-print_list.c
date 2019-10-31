@@ -7,19 +7,20 @@
  *
  */
 
-size_t print_list(list_t *h)
+size_t print_list(const list_t *h)
 {
-	list_t *temp_h = h;
+	const list_t *temp_h = h;
 	int num_of_elem = 0;
+	int i;
 
 	while (temp_h != NULL)
 	{
 		if (temp_h->str)
 		{
-			for (temp_h->len = 0; temp_h->str[temp_h->len] != '\0'; temp_h->len++)
+			for (i = 0; temp_h->str[i] != '\0'; i++)
 			{
 			}
-			printf("[%u] %s", temp_h->len, temp_h->str);
+			printf("[%u] %s", i, temp_h->str);
 		}
 		else
 		{

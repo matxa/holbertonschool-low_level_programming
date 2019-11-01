@@ -2,7 +2,6 @@
 
 /**
  * before_main - prints string before main exec
- *
  */
 
 void before_main(void)

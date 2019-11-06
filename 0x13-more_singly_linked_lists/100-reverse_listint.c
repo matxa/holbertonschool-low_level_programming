@@ -2,7 +2,7 @@
 
 /**
 * reverse_listint - reverse list
-* @head - head
+* @head: - head
 * Return: list
 *
 */

@@ -24,16 +24,20 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd_read == -1) /* if an error occoured */
 		return (0);
 
-	read_count = read(fd_read, buffer, letters); /* the number of bytes read is returned */
+	/* the number of bytes read is returned */
+	read_count = read(fd_read, buffer, letters);
 	if (read_count == -1) /* On error, -1 is returned */
 		return (0);
 
-	write_count = write(STDOUT_FILENO, buffer, read_count); /* gets whats in buffer and outputs to the screen */
+	/* gets whats in buffer and outputs to the screen */
+	write_count = write(STDOUT_FILENO, buffer, read_count);
 	if (write_count == -1) /* On error, -1 is returned */
 		return (0);
 
 	close(fd_read); /* close the open file */
 
 	free(buffer); /* free buffer */
-	return (write_count); /* return the amount of chars pritned to stdout_fileno */
+
+	/* return the amount of chars pritned to stdout_fileno */
+	return (write_count);
 }

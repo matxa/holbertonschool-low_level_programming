@@ -10,30 +10,30 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd_read;
-	char *buffer;
-	ssize_t read_count;
-	ssize_t write_count;
+	int fd_read; /* file descriptor */
+	char *buffer; /* buffer reading to, and writting from */
+	ssize_t read_count; /* sets = read() - keep count of read*/
+	ssize_t write_count; /* sets = write() - keep count of write*/
 
-	if (filename == NULL)
+	if (filename == NULL) /* check if file is null */
 		return (0);
 
-	buffer = malloc(sizeof(char) * letters);
+	buffer = malloc(sizeof(char) * letters); /* allocating memory for buffer */
 
-	fd_read = open(filename, O_RDONLY);
-	if (fd_read == -1)
+	fd_read = open(filename, O_RDONLY); /* open takes a filename and O_FLAGS */
+	if (fd_read == -1) /* if an error occoured */
 		return (0);
 
-	read_count = read(fd_read, buffer, letters);
-	if (read_count == -1)
+	read_count = read(fd_read, buffer, letters); /* the number of bytes read is returned */
+	if (read_count == -1) /* On error, -1 is returned */
 		return (0);
 
-	write_count = write(STDOUT_FILENO, buffer, read_count);
-	if (write_count == -1)
+	write_count = write(STDOUT_FILENO, buffer, read_count); /* gets whats in buffer and outputs to the screen */
+	if (write_count == -1) /* On error, -1 is returned */
 		return (0);
 
-	close(fd_read);
+	close(fd_read); /* close the open file */
 
-	free(buffer);
-	return (write_count);
+	free(buffer); /* free buffer */
+	return (write_count); /* return the amount of chars pritned to stdout_fileno */
 }

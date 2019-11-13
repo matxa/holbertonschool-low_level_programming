@@ -10,29 +10,25 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd_append;
-	int bytes;
-	char c;
+	int write_len;
+	int len = 0;
 
-	fd_append = open(filename, O_APPEND | O_CREAT | O_EXCL);
-
-	if (fd_append == (-1) || filename == NULL)
-	{
+	if (filename == NULL)
 		return (-1);
-	}
 
-	if (fd_append < 0)
-	{
-		return (1);
-	}
-	else
-	{
+	if (text_content == NULL)
+		text_content = "";
+
+	fd_append = open(filename, O_WRONLY | O_APPEND);
+	if (fd_append == -1)
 		return (-1);
-	}
 
-	while ((bytes = read(fd_append, &c, sizeof(c))) > 0)
-	{
-		write(fd_append, text_content, sizeof(c));
-	}
+	while (text_content[len] != '\0')
+		len++;
+
+	write_len = write(fd_append, text_content, len);
+	if (write_len == -1)
+		return (-1);
 
 	close(fd_append);
 	return (1);

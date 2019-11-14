@@ -43,6 +43,19 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
+	close_cp_func(fd1, fd2);
+	return (0);
+}
+
+/**
+* close_cp_func - function for closing fd
+* @fd1: fd 1
+* @fd2: fd 2
+*
+*/
+
+void close_cp_func(int fd1, int fd2)
+{
 	if (close(fd1) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd1);
@@ -53,5 +66,4 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd2);
 		exit(100);
 	}
-	return (0);
 }

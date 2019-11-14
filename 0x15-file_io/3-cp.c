@@ -10,31 +10,48 @@
 
 int main(int argc, char *argv[])
 {
-	int file_one, file_two, n;
-	char buffer[1024];
+	int fd1, fd2, count;
+	char *buffer[1024];
 
 	if (argc != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
-	file_one = open(argv[1], O_RDONLY, 0);
-	if (file_one == (-1))
+	fd1 = open(argv[1], O_RDONLY);
+	if (fd1 == -1)
 	{
-		printf("can't open file %s", argv[1]);
+		dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+		exit(98);
 	}
-	file_two = open(argv[1], 0666);
-	if (file_two == (-1))
+	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (fd2 == -1)
 	{
-		printf("can't open file %s", argv[2]);
+		dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
+		exit(99);
 	}
-
-	while ((n = read(file_one, buffer, 1024)) > 0)
+	while ((count = read(fd1, buffer, sizeof(buffer))) > 0)
 	{
-		if ((write(file_two, buffer, n)) != n)
-			printf("write error on file %s", argv[2]);
+		if (count == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		if (write(fd2, buffer, count) != count)
+		{
+			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
-
+	if (close(fd1) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd1);
+		exit(100);
+	}
+	if (close(fd1) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd1);
+		exit(100);
+	}
 	return (0);
 }

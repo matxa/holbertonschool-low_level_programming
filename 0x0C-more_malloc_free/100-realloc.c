@@ -13,62 +13,31 @@
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *new_ptr;
-
-	if (new_size > old_size)
-	{
-		new_ptr = malloc(new_size);
-		free(new_ptr);
-		return (ptr);
-	}
-	if (new_size == old_size)
-		return (ptr);
+	unsigned int count;
 
 	if (ptr == NULL)
 	{
 		new_ptr = malloc(new_size);
-		free(new_ptr);
-		return (ptr);
+		return (new_ptr);
 	}
-	if (new_size == 0 && ptr != NULL)
+	if (new_size == 0)
 	{
 		free(ptr);
 		return (NULL);
 	}
-
+	if (new_size == old_size)
+		return (ptr);
+	/* malloc for new_ptr */
 	new_ptr = malloc(new_size);
-	_memcpy(new_ptr, ptr, old_size);
-	free(new_ptr);
+	if (new_ptr == NULL)
+	{
+		return (NULL);
+	}
+
+	for (count = 0; count < old_size && count < new_size; count++)
+	{
+		new_ptr[count] = ((char *)ptr)[count];
+	}
 	free(ptr);
-	return (0);
-
-}
-
-/**
-* _getmin - gets the minimum of two numbers
-* @a: first num
-* @b: second num
-* Return: min
-*/
-
-int _getmin(unsigned int a, unsigned int b)
-{
-	return (a < b ? a : b);
-}
-
-/**
- **_memcpy - function that fills memory with a constant byte
- *@dest: pointer
- *@src: char var
- *@n: int var
- *Return: (b)
- */
-
-char *_memcpy(char *dest, char *src, unsigned int n)
-{
-	char *temp_p = dest;
-	const char *s = src;
-
-	while (n--)
-		*temp_p++ = *s++;
-	return (dest);
+	return (new_ptr);
 }

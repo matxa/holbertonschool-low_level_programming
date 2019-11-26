@@ -2,28 +2,50 @@
 #include <stdlib.h>
 
 /**
- * *_strdup - duplicate str
- * @str: char array
- * Return: duplicated str
- *
+ * str_concat - concatenates two strings
+ * @s1: string one
+ * @s2: string two
+ * Return: ptr
  */
-
-char *_strdup(char *str)
+char *str_concat(char *s1, char *s2)
 {
-	char *new_str;
-	int i, n;
+	/* declare your variables */
+	int len1 = 0, len2 = 0, count = 0, begs = 0;
+	char *cat;
 
-	for (n = 0; str[n] != '\0'; n++)
-	{}
+	/* check for empty strings */
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
-	str = malloc(n + 1);
+	/* find length of strings */
+	while (s1[len1] != '\0')
+		len1++;
+	while (s2[len2] != '\0')
+		len2++;
 
-	if (str == NULL)
+	begs = len1 + len2 + 1;
+	/* allocate memory for concatenated string */
+	cat = malloc(begs * sizeof(char));
+	/* malloc fail safe */
+	if (cat == NULL)
 		return (NULL);
 
-	for (i = 0; i < (n + 1); i++)
-		new_str[i] = str[i];
-	new_str[i] = '\0';
+	len2 = 0;
 
-	return (new_str);
+	/* duplicate s1 to cat */
+	while (count < begs)
+	{
+		if (count < len1)
+			cat[count] = s1[count];
+		else
+		{
+			cat[count] = s2[len2];
+			len2++;
+		}
+		count++;
+	}
+	cat[count] = '\0';
+	return (cat);
 }

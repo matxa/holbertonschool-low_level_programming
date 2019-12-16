@@ -16,7 +16,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	if (new_node == NULL)
 		return (NULL);
 	/* get the address of the last node */
-	dlistint_t *last = (*head);
+	dlistint_t *last = *head;
 
 	/* put in the data */
 	new_node->n = n;
@@ -27,7 +27,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	if (*head == NULL)
 	{
 		new_node->prev = NULL;
-		(*head) = new_node;
+		*head = new_node;
 		return (NULL);
 	}
 	/* else treverse till the last node */

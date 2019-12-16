@@ -1,35 +1,42 @@
 #include "lists.h"
 
 /**
-* add_dnodeint_end - add node to the end of d.linked.list
+* add_dnodeint_end - add node to end of d.linked.list
 * @head: head of the list
-* @n: int data to enter at the end of d.linked.list
-* Return: the address of the new element, or NULL if it failed
+* @n: data of the node
+* Return: address of the new element, or NULL if it failed
 *
 */
 
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-        dlistint_t *n2 = malloc(sizeof(dlistint_t));
-        dlistint_t *last;
+	/* allocate node */
+	dlistint_t *new_node = malloc(sizeof(dlistint_t));
 
-	if (n2 == NULL)
+	if (new_node == NULL)
 		return (NULL);
+	/* get the address of the last node */
+	dlistint_t *last = (*head);
 
-        while (head)
-        {
-                last = *head;
-                head = head->next;
-        }
+	/* put in the data */
+	new_node->n = n;
+	/* This is goin to be the last node, set it to NULL */
+	new_node->next = NULL;
 
-	n2->n = n;
-	n2->prev = last;
-	last = n2;
+	/* If the linked list is empty, then make next node the new head */
+	if (*head == NULL)
+	{
+		new_node->prev = NULL;
+		(*head) = new_node;
+		return (NULL);
+	}
+	/* else treverse till the last node */
+	while (last->next != NULL)
+		last = last->next;
+	/* change the next of last node */
+	last->next = new_node;
+	/* make last node as previous of new node */
+	new_node->prev = last;
 
-	// if (*head == NULL)
-	// {
-	// 	return (NULL);
-	// }
-
-	return (n2);
+	return (new_node);
 }

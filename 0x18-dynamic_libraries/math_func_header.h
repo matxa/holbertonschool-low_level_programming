@@ -1,8 +1,6 @@
 #ifndef MATH_FUNC
 #define MATH_FUNC
 
-#include <stdlib.h>
-
 
 int add(int a, int b);
 int sub(int a, int b);

@@ -2,8 +2,7 @@
 #define MATH_FUNC
 
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+
 
 int add(int a, int b);
 int sub(int a, int b);

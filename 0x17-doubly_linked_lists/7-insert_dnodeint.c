@@ -2,7 +2,7 @@
 
 /**
  * insert_dnodeint_at_index - get node at index
- * @h: head of the list
+ * @h: h of the list
  * @idx: index
  * @n: node's int value
  * Return: insert at index
@@ -19,6 +19,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 
 	new_node->n = n;
+
+	if (!idx)
+	{
+		new_node->prev = NULL;
+		new_node->next = *h;
+		*h = new_node;
+		return (new_node);
+	}
 
 	while (temp)
 	{

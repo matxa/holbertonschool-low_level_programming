@@ -14,10 +14,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *temp;
 	hash_node_t *new_node = malloc(sizeof(hash_node_t));
 
-	if (ht == NULL ||  key == NULL || value == NULL)
-	{
+	if (key == NULL)
 		return (0);
-	}
 	if (new_node == NULL)
 	{
 		return (0);

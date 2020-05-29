@@ -32,6 +32,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			new_node = temp->next;
 			ht->array[index] = new_node;
+			free_linked_list(temp);
 			return (1);
 		}
 		while (temp->next && strcmp(temp->next->key, key) != 0)
@@ -39,6 +40,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (strcmp(temp->key, key) == 0)
 		{
 			new_node = temp->next->next;
+			free_linked_list(temp->next);
 			temp->next = new_node;
 		}
 		else
@@ -48,4 +50,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 	}
 	return (1);
+}
+
+/**
+ * free_linked_list - free node
+ * @node: node to free
+ * Return: VOID
+ */
+
+void free_linked_list(hash_node_t *node)
+{
+	free(node->key);
+	free(node->value);
+	free(node);
 }

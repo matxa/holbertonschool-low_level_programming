@@ -32,7 +32,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		temp = ht->array[index];
-		while (temp->next)
+		while (temp->next && strcmp(temp->next->key, key) != 0)
 		{
 			temp = temp->next;
 		}

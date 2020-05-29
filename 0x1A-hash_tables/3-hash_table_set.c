@@ -32,12 +32,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		temp = ht->array[index];
-        if (strcmp(temp->key, key) == 0)
-        {
-            new_node = temp->next;
-            ht->array[index] = new_node;
-            return (1);
-        }
+		if (strcmp(temp->key, key) == 0)
+		{
+			new_node = temp->next;
+			ht->array[index] = new_node;
+			return (1);
+		}
 		while (temp->next && strcmp(temp->next->key, key) != 0)
 		{
 			temp = temp->next;

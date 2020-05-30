@@ -31,31 +31,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 	temp = ht->array[index];
-	while (temp->next)
+	while (temp)
 	{
 		if (strcmp(temp->key, key) == 0)
 		{
+			free(temp->value);
 			temp->value = strdup(value);
-			free_ll(temp);
-				free(new_node);
-				return (1);
+			free(new_node);
+			return (1);
 		}
 		temp = temp->next;
 	}
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
 	return (1);
-}
-
-/**
- * free_ll - free linked list
- * @node: node
- * Return: VOID
- */
-
-void free_ll(hash_node_t *node)
-{
-	free(node->key);
-	free(node->value);
-	free(node);
 }

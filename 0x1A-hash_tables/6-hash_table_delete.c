@@ -20,8 +20,8 @@ void hash_table_delete(hash_table_t *ht)
 		{
 			temp = cur_temp;
 			cur_temp = cur_temp->next;
+            free(temp->key);
 			free(temp->value);
-			free(temp->key);
 			free(temp);
 		}
 	}

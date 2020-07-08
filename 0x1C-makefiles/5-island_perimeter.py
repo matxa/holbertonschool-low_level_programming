@@ -4,22 +4,15 @@
 
 def island_perimeter(grid):
     """Island
-    Perimeter
+    perimeter
     """
-    sum_of_ls = []
-    height = 0
-    for ls in grid:
-        sum_of_ls.append(sum(ls))
-    for i in sum_of_ls:
-        if i is 1:
-            height += i
-    height += 1
-    width = max(sum_of_ls)
-    return perimeter(height, width)
-
-
-def perimeter(height, width):
-    """Perimeter"""
-    if height == 0 or width == 0:
-        return 0
-    return (height + height) + (width + width)
+    result = 0
+    for i in range(len(grid)):
+        for j in range(len(grid[i])):
+            if grid[i][j] == 1:
+                result += 4
+                if i > 0 and grid[i-1][j] == 1:
+                    result -= 2
+                if j > 0 and grid[i][j-1] == 1:
+                    result -= 2
+    return result
